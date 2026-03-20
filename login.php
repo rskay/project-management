@@ -1,26 +1,18 @@
 <?php
+// login.php
 session_start();
 
-// Function to handle login
-function login($username, $password) {
-    // Placeholder for user validation logic (e.g., checking against a database)
-    if ($username == 'user' && $password == 'password') {
-        $_SESSION['user'] = $username;
-        return true;
-    }
-    return false;
+function loginUser($username, $password) {
+    // Placeholder for login logic
+    // Validate credentials against database
+    // Set session variables
+    echo "Login attempt for: $username";
 }
 
-// Check if login form is submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
-    if (login($username, $password)) {
-        echo 'Login successful!';
-    } else {
-        echo 'Invalid username or password.';
-    }
+    loginUser($username, $password);
 }
 ?>
 
@@ -32,12 +24,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
 </head>
 <body>
-    <form method="POST" action="">
+    <h1>Login</h1>
+    <form method="POST" action="login.php">
         <label for="username">Username:</label>
         <input type="text" name="username" required>
+        <br>
         <label for="password">Password:</label>
         <input type="password" name="password" required>
+        <br>
         <button type="submit">Login</button>
     </form>
+    <p>Don't have an account? <a href="register.php">Register here</a></p>
 </body>
 </html>
