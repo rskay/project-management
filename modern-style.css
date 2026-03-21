@@ -1,0 +1,78 @@
+.modern-style {
+    --main-bg-color: linear-gradient(135deg, #6e8fbd, #e3b59a);
+    --text-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 15px;
+}
+
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Feature Cards Styles */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
